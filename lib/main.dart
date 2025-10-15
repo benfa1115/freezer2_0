@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'router.dart';
+import 'services/db.dart';
 
-void main() {
-  // Only needed if you do async work before runApp(); harmless to keep.
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await DatabaseService.instance.init();
   runApp(const MyFreezerApp());
 }
 
